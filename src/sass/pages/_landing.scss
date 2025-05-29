@@ -1,0 +1,26 @@
+.landing {
+
+    &__main {
+
+        align-items: center;
+        justify-content: center;
+        background-image: url("/assets/bg-tearoom.jpg");
+        background-position: center;
+        background-size: cover;
+        background-blend-mode: overlay;
+        background-color: rgba($color: #000000, $alpha: 0.8);
+    }
+
+  
+}
+
+
+#landing-section {
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+
+    button {
+        --animate-duration: 2s;
+    }
+}
