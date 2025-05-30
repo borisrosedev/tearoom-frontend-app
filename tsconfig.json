@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "ES2022",
-    "esModuleInterop": false
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "esModuleInterop": false,
+    "types": ["jest"]
   },
-
   "include": ["**/*.ts", "**/*.mjs"],
   "exclude": ["**/node_modules"]
 }

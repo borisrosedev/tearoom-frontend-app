@@ -1,7 +1,22 @@
+import HomeContainer from "./src/ts/containers/home/HomeContainer";
 import LandingContainer from "./src/ts/containers/landing/LandingContainer";
+import homePage from "./src/ts/ui/pages/home/home";
 import landingPage from "./src/ts/ui/pages/landing/landing";
 import loginPage from "./src/ts/ui/pages/login/login";
 import notFoundPage from "./src/ts/ui/pages/not-found/not-found";
+
+
+
+declare global {
+  interface Window {
+    onNavigate: (h: string) => void
+  }
+}
+
+
+window.onNavigate = navigateTo
+
+
 
 window.onpopstate = function () {
   navigateTo(window.location.hash);
@@ -20,13 +35,18 @@ function navigateTo(hash: string) {
   // control flow
   // considering the value held by hash one case will be applied
 
-  const rootDiv = document.getElementById("root") as HTMLElement;
+  const rootDiv = document.getElementById("root");
   rootDiv.innerHTML = "";
   switch (hash) {
     case "":
       rootDiv.innerHTML += landingPage();
-      new LandingContainer();
+      new LandingContainer(window.onNavigate);
       console.log("🚀 you are on the landing page");
+      break;
+    case "#home":
+      rootDiv.innerHTML += homePage();
+      new HomeContainer(window.onNavigate);
+      console.log("🚩you are on the home page");
       break;
     case "#login":
       rootDiv.innerHTML += loginPage();

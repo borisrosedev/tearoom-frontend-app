@@ -1,0 +1,17 @@
+.home {
+
+    &__main {
+        flex-direction: column;
+    }
+
+    &__hero-section {
+        min-height: 100vh;
+      
+    }
+}
+
+
+#home-hero-figure {
+    height: 40vh;
+
+}

@@ -2,3 +2,12 @@
   display: flex;
   min-height: 100vh;
 }
+
+
+.custom-figure {
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+}

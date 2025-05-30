@@ -1,10 +1,12 @@
-import { resolve } from "path";
+import { OnNavigateType } from "../../interfaces/OnNavigateType";
+import BaseContainer from "../../models/BaseContainer";
 import buttonComponent from "../../ui/components/button/button";
 
-class LandingContainer {
+class LandingContainer extends BaseContainer {
   landingSection!: HTMLElement;
 
-  constructor() {
+  constructor(onNavigate: OnNavigateType) {
+    super(onNavigate);
     this.landingSection = document.getElementById("landing-section");
     this.onInit();
   }
@@ -15,16 +17,16 @@ class LandingContainer {
       content: "Enter",
       classNames: "is-primary animate__animated animate__fadeInUp",
     });
-    resolve();
+    resolve() ;
   }
 
   onInit() {
     setTimeout(() => {
       new Promise(this.buttonCreationExecutor.bind(this)).then(() => {
         const landingButton = document.getElementById("landing-button");
-        landingButton.addEventListener("click", function () {
-          window.alert("You clicked");
-        });
+        landingButton.addEventListener("click", () => {
+           this.onNavigate("#home");
+        })
       });
     }, 1500);
   }
