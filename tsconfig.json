@@ -1,10 +1,10 @@
 {
-    "compilerOptions": {
-        "target": "ES2022",
-        "module": "ES2022",
-        "esModuleInterop": false
-    },
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "esModuleInterop": false
+  },
 
-    "include": ["**/*.ts", "**/*.mjs"],
-    "exclude": ["**/node_modules"]
+  "include": ["**/*.ts", "**/*.mjs"],
+  "exclude": ["**/node_modules"]
 }

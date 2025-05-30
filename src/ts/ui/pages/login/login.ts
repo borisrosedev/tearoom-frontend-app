@@ -1,6 +1,5 @@
-function loginPage (): string {
-    return (
-        `
+function loginPage(): string {
+  return `
             
             <main class="tearoom-main login__main">
 
@@ -13,8 +12,7 @@ function loginPage (): string {
             </main>
         
         
-        `
-    )
+        `;
 }
 
-export default loginPage
+export default loginPage;

@@ -1,7 +1,5 @@
-
-function landingPage (): string {
-    return (
-        `
+function landingPage(): string {
+  return `
             
             <main class="tearoom-main landing__main">
 
@@ -14,8 +12,7 @@ function landingPage (): string {
             </main>
         
         
-        `
-    )
+        `;
 }
 
-export default landingPage
+export default landingPage;

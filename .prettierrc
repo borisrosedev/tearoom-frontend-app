@@ -1,7 +1,7 @@
 {
-    "arrowParens": "always",
-    "bracketSpacing": true,
-    "semi": true,
-    "htmlWhitespaceSensitivity": "css",
-    "singleQuote": false
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "semi": true,
+  "htmlWhitespaceSensitivity": "css",
+  "singleQuote": false
 }

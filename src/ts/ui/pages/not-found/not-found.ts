@@ -1,6 +1,5 @@
-function notFoundPage (): string {
-    return (
-        `
+function notFoundPage(): string {
+  return `
             
             <main class="tearoom-main not-found__main">
 
@@ -13,8 +12,7 @@ function notFoundPage (): string {
             </main>
         
         
-        `
-    )
+        `;
 }
 
-export default notFoundPage
+export default notFoundPage;

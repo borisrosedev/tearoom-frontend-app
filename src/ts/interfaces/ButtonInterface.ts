@@ -1,8 +1,8 @@
 interface ButtonInterface {
-    id: string
-    content: string
-    type?: "submit" | "reset" | "button",
-    classNames?: string
+  id: string;
+  content: string;
+  type?: "submit" | "reset" | "button";
+  classNames?: string;
 }
 
-export default ButtonInterface
+export default ButtonInterface;
