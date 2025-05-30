@@ -5,18 +5,13 @@ import landingPage from "./src/ts/ui/pages/landing/landing";
 import loginPage from "./src/ts/ui/pages/login/login";
 import notFoundPage from "./src/ts/ui/pages/not-found/not-found";
 
-
-
 declare global {
   interface Window {
-    onNavigate: (h: string) => void
+    onNavigate: (h: string) => void;
   }
 }
 
-
-window.onNavigate = navigateTo
-
-
+window.onNavigate = navigateTo;
 
 window.onpopstate = function () {
   navigateTo(window.location.hash);
