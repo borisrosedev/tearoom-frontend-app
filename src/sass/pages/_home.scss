@@ -1,37 +1,31 @@
 .home {
+  &__main {
+    flex-direction: column;
+  }
 
-    &__main {
-        flex-direction: column;
-    }
-
-    &__hero-section {
-        min-height: 100vh;
-      
-    }
+  &__hero-section {
+    min-height: 100vh;
+  }
 }
 
-
 .home-hero__speech-section {
-
-    padding: 10px;
+  padding: 10px;
 }
 
 #home-hero-figure {
-    height: 40vh;
-
+  height: 40vh;
 }
 
-
 #home-hero-signatures {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding-inline: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-inline: 10px;
 
-    .card {
-        width: 250px;
-        height: 500px;
+  .card {
+    width: 250px;
+    height: 500px;
 
-        margin: 10px;
-    }
+    margin: 10px;
+  }
 }

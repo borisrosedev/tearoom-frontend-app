@@ -1,10 +1,8 @@
 export default interface FieldInterface {
+  id: string;
 
-    id: string 
-
-    placeholder?: string 
-    iconName?: string 
-    classNames?: string
-    type?: string 
-
-} 
+  placeholder?: string;
+  iconName?: string;
+  classNames?: string;
+  type?: string;
+}

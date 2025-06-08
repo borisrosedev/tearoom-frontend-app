@@ -1,31 +1,24 @@
-import { CardProductType } from "../../../interfaces/ProductInterface"
+import { CardProductType } from "../../../interfaces/ProductInterface";
 
-function tagsListComponent (data: Array<string>) {
-    return(
-
-        `
-            ${(data.map((el:string) => `<a href="#">#${el}</a>`).join(""))}
+function tagsListComponent(data: Array<string>) {
+  return `
+            ${data.map((el: string) => `<a href="#">#${el}</a>`).join("")}
         
-        `
-    )
+        `;
 }
 
-
-function contentComponent(data: { description: string, tags: Array<string> }) {
-    return (
-        `
+function contentComponent(data: { description: string; tags: Array<string> }) {
+  return `
             <div class="content">
                  ${data.description} ${tagsListComponent(data.tags)}
             </div>
             
         
-        `
-    )
+        `;
 }
 
-function mediaComponent (data: Partial <CardProductType>) {
-    return(
-        `
+function mediaComponent(data: Partial<CardProductType>) {
+  return `
         
         <div class="media">
                     <div class="media-left">
@@ -42,30 +35,22 @@ function mediaComponent (data: Partial <CardProductType>) {
                     </div>
                 </div>
         
-        `
-    )
+        `;
 }
 
-
-function cardContentComponent (data: Partial <CardProductType>) {
-
-    return (
-        `
+function cardContentComponent(data: Partial<CardProductType>) {
+  return `
             <div class="card-content"> 
-                ${mediaComponent({ src: data.src , alt: data.alt, name: data.name, mainCategory: data.mainCategory,  })}
-                ${contentComponent({  description: data.description, tags: data.tags})}
+                ${mediaComponent({ src: data.src, alt: data.alt, name: data.name, mainCategory: data.mainCategory })}
+                ${contentComponent({ description: data.description, tags: data.tags })}
             </div>
         
          
-        `
-    )
+        `;
 }
 
-
-
-function cardImageComponent (data: Partial<CardProductType>) {
-    return (
-        `
+function cardImageComponent(data: Partial<CardProductType>) {
+  return `
            <div class="card-image">
                     <figure class="image is-4by3">
                     <img
@@ -77,26 +62,18 @@ function cardImageComponent (data: Partial<CardProductType>) {
         
         
         
-        `
-    )
+        `;
 }
 
-
-
-
-
-export default function cardComponent (data: CardProductType) {
-
-    return(
-        `
+export default function cardComponent(data: CardProductType) {
+  return `
         
             <div class="card">
-                ${cardImageComponent({ mainCategory: data.mainCategory, src: (data.photo ?? data.url ?? data.src), alt: (data.name ?? data.alt)  })}
-                ${cardContentComponent({mainCategory: data.mainCategory, src: (data.src ?? data.url ?? data.photo) ,description: data.description, tags: data.tags, alt: (data.alt ?? data.name ), name: data.name })}
+                ${cardImageComponent({ mainCategory: data.mainCategory, src: data.photo ?? data.url ?? data.src, alt: data.name ?? data.alt })}
+                ${cardContentComponent({ mainCategory: data.mainCategory, src: data.src ?? data.url ?? data.photo, description: data.description, tags: data.tags, alt: data.alt ?? data.name, name: data.name })}
             </div>
                         
         
         
-        `
-    )
+        `;
 }

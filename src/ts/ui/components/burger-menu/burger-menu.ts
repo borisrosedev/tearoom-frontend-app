@@ -1,7 +1,5 @@
 function burgerMenuComponent(id: string, target: string) {
-
-    return (
-     `
+  return `
        <a id="${id}"
        href="javascript:void(0);"
        role="button"
@@ -17,9 +15,7 @@ function burgerMenuComponent(id: string, target: string) {
             <span aria-hidden="true"></span>
         </a>
      
-     `
-    )
+     `;
 }
-
 
 export default burgerMenuComponent;

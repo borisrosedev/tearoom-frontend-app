@@ -4,11 +4,9 @@ import FormInterface from "../../../interfaces/FormInterface";
 import buttonComponent from "../button/button";
 import formFieldComponent from "./form-field";
 
-export default function FormComponent (data: FormInterface) {
-
-    return(
-        `
-            <form id="${data.formId}" class="${data.formClassNames ?? ''}">
+export default function FormComponent(data: FormInterface) {
+  return `
+            <form id="${data.formId}" class="${data.formClassNames ?? ""}">
                 <section id="form-fields-section">
                     ${data.formFields.map((el: FieldInterface) => formFieldComponent(el)).join("")}
                 </section>
@@ -18,6 +16,5 @@ export default function FormComponent (data: FormInterface) {
 
             </form>
         
-        `
-    )
+        `;
 }

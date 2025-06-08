@@ -1,7 +1,5 @@
-
 function navBarLayout() {
-    return (
-        `
+  return `
         
         <nav id="navbar" tabindex="0" class="navbar custom-navbar" role="navigation" aria-label="main navigation">
             <div id="navbar-brand" class="navbar-brand">
@@ -12,9 +10,7 @@ function navBarLayout() {
         </nav>
                     
         
-        `
-    )
+        `;
 }
-
 
 export default navBarLayout;

@@ -1,4 +1,3 @@
-
 function navBarMenu(id: string) {
   return `
         
@@ -12,6 +11,5 @@ function navBarMenu(id: string) {
         
     `;
 }
-
 
 export default navBarMenu;

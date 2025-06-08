@@ -17,7 +17,7 @@ class LandingContainer extends BaseContainer {
       content: "Enter",
       classNames: "is-primary animate__animated animate__fadeInUp",
     });
-    resolve() ;
+    resolve();
   }
 
   onInit() {
@@ -25,8 +25,8 @@ class LandingContainer extends BaseContainer {
       new Promise(this.buttonCreationExecutor.bind(this)).then(() => {
         const landingButton = document.getElementById("landing-button");
         landingButton.addEventListener("click", () => {
-           this.onNavigate("#home");
-        })
+          this.onNavigate("#home");
+        });
       });
     }, 1500);
   }

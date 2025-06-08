@@ -8,18 +8,13 @@ import landingPage from "./src/ts/ui/pages/landing/landing";
 import loginPage from "./src/ts/ui/pages/login/login";
 import notFoundPage from "./src/ts/ui/pages/not-found/not-found";
 
-
-
 declare global {
   interface Window {
-    onNavigate: (h: string) => void
+    onNavigate: (h: string) => void;
   }
 }
 
-
-window.onNavigate = navigateTo
-
-
+window.onNavigate = navigateTo;
 
 window.onpopstate = function () {
   navigateTo(window.location.hash);
@@ -40,31 +35,31 @@ function navigateTo(hash: string) {
 
   const rootDiv = document.getElementById("root");
   rootDiv.innerHTML = "";
-  rootDiv.insertAdjacentHTML('beforeend',navBarLayout())
+  rootDiv.insertAdjacentHTML("beforeend", navBarLayout());
   new NavBarContainer(window.onNavigate);
   switch (hash) {
     case "":
-      rootDiv.insertAdjacentHTML('beforeend', landingPage()) 
+      rootDiv.insertAdjacentHTML("beforeend", landingPage());
       new LandingContainer(window.onNavigate);
       console.log("🚀 you are on the landing page");
       break;
     case "#home":
-       rootDiv.insertAdjacentHTML('beforeend', homePage()) 
+      rootDiv.insertAdjacentHTML("beforeend", homePage());
       new HomeContainer(window.onNavigate);
       console.log("🚩you are on the home page");
       break;
     case "#login":
-      rootDiv.insertAdjacentHTML('beforeend', loginPage()) 
-      new LoginContainer(window.onNavigate)
+      rootDiv.insertAdjacentHTML("beforeend", loginPage());
+      new LoginContainer(window.onNavigate);
       console.log("🍧 you are on the login page");
       break;
     case "#signup":
-      rootDiv.insertAdjacentHTML('beforeend', loginPage())
-      new LoginContainer(window.onNavigate, false) 
+      rootDiv.insertAdjacentHTML("beforeend", loginPage());
+      new LoginContainer(window.onNavigate, false);
       console.log("🍧 you are on the login page");
-      break;  
+      break;
     default:
-       rootDiv.insertAdjacentHTML('beforeend', notFoundPage()) 
+      rootDiv.insertAdjacentHTML("beforeend", notFoundPage());
       console.log("❌you are elsewhere");
       break;
   }

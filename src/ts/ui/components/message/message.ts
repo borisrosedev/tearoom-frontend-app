@@ -1,14 +1,12 @@
 import MessageInterface from "../../../interfaces/MessageInterface";
 
-function messageComponent (data: MessageInterface) {
-
-    return(
-        `
+function messageComponent(data: MessageInterface) {
+  return `
         
-            <article id="${data.id}" class="message ${data.classNames ?? 'is-primary'}">
+            <article id="${data.id}" class="message ${data.classNames ?? "is-primary"}">
                 <section class="message-header">
                     <p>${data.header}</p>
-                    ${ data.buttonId ? `<button id=${data.buttonId} class="delete" aria-label="delete"></button>`: ''}
+                    ${data.buttonId ? `<button id=${data.buttonId} class="delete" aria-label="delete"></button>` : ""}
                 </section>
                 <section class="message-body">
                     ${data.body}
@@ -16,9 +14,7 @@ function messageComponent (data: MessageInterface) {
             </article>
                         
         
-        `
-    )
+        `;
 }
-
 
 export default messageComponent;

@@ -1,26 +1,19 @@
 import { navBarItem } from "./navbar-item";
 
-
 interface navBarDropDownProps {
-   
-    mainList: any[]
-    secondaryList: any[] 
-    
+  mainList: any[];
+  secondaryList: any[];
 }
 
-
-
 function navBarDropDown(data: navBarDropDownProps) {
-    return(
-        `   
+  return `   
         <div class="navbar-dropdown">
-            ${(data.mainList.map((el:any) => navBarItem(el) )).join("")}
+            ${data.mainList.map((el: any) => navBarItem(el)).join("")}
             <hr class="navbar-divider">
-            ${(data.secondaryList.map((el:any) => navBarItem(el) )).join("")}
+            ${data.secondaryList.map((el: any) => navBarItem(el)).join("")}
         </div>
 
-        `
-    )
+        `;
 }
 
 export default navBarDropDown;

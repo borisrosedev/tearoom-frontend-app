@@ -1,11 +1,7 @@
-import navBarButton from "./navbar-button"
+import navBarButton from "./navbar-button";
 
-
-
-export function navBarItemWithDropdown (dropdownsectionId: string) {
-    return (
-
-        `
+export function navBarItemWithDropdown(dropdownsectionId: string) {
+  return `
         
             <section id="${dropdownsectionId}" class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
@@ -17,31 +13,25 @@ export function navBarItemWithDropdown (dropdownsectionId: string) {
             </section>
         
         
-        `
-    )
+        `;
 }
 
-
-export function navBarItem({ isSelected, href, content}){
-    return (
-
-        `
+export function navBarItem({ isSelected, href, content }) {
+  return `
     
-            <a href="${href}" class="navbar-item ${isSelected ? 'is-selected': ''}">
-                ${ content }
+            <a href="${href}" class="navbar-item ${isSelected ? "is-selected" : ""}">
+                ${content}
             </a>
         
         
         
         
         
-        `
-    )
+        `;
 }
 
-export function  navBarItemWithButtons (btns: any[]) {
-    return(
-        `
+export function navBarItemWithButtons(btns: any[]) {
+  return `
         <div class="navbar-item">
             <div class="buttons">
                 ${btns.map((btn: any) => navBarButton(btn)).join("")}
@@ -49,6 +39,5 @@ export function  navBarItemWithButtons (btns: any[]) {
         </div>
         
         
-        `
-    )
+        `;
 }

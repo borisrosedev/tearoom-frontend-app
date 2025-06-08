@@ -37,8 +37,8 @@ module.exports = {
         },
         {
           from: "data",
-          to: "data"
-        }
+          to: "data",
+        },
       ],
     }),
   ],
