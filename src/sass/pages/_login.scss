@@ -3,4 +3,16 @@
     align-items: center;
     justify-content: center;
   }
+
+  &__form {
+
+    & > section:first-of-type {
+      margin-block: 20px;
+    }
+
+    & > section:last-of-type {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }

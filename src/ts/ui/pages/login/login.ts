@@ -5,8 +5,7 @@ function loginPage(): string {
 
                 <section id="login-section">
 
-                    <h1 class="title is-1"> Login </h1>
-
+                    
                 </section>
             
             </main>

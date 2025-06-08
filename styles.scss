@@ -1,5 +1,6 @@
 @use "./src/sass/base/base";
-
+@use "./src/sass/base/typography";
+@use "./src/sass/layout/custom-navbar";
 @use "./src/sass/pages/landing.scss";
 @use "./src/sass/pages/home";
 @use "./src/sass/pages/login.scss";

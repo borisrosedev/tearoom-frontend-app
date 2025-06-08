@@ -1,4 +1,6 @@
-function figureComponent (data: any) {
+import FigureInterface from "../../../interfaces/FigureInterface";
+
+function figureComponent (data: FigureInterface) {
 
     return (
         `

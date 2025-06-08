@@ -1,0 +1,49 @@
+[
+
+    {
+        "id": 0,
+        "name": "Purple Paradise",
+        "description":"A luxurious and unique signature tea beverage. The drink is a creative infusion featuring a double-walled glass cup with...",
+        "price": 10.00,
+        "quantity": 20,
+        "isAvailable": true,
+        "mainCategory": "teas",
+        "tags": ["teas","drinks"],
+        "categories": ["teas", "drinks"],
+        "photo": "purple-tea.webp"
+        
+    },
+
+
+    {
+        "id": 1,
+        "name": "Sophie the Artist",
+        "description":"A sophisticated and artistic image of a signature tea cocktail in a luxury tea salon. The drink is served in a crystal glass with layers of vibrant ...",
+        "price": 15.00,
+        "quantity": 20,
+        "isAvailable": true,
+        "tags": ["teas","drinks"],
+        "mainCategory": "teas",
+        "categories": ["teas", "drinks"],
+        "photo": "green-yellow-red-flower.webp"
+        
+    },
+
+
+
+    {
+        "id": 2,
+        "name": "Flower of Heart",
+        "description":"A beautifully styled artistic image of a signature tea beverage served in a high-end tea salon. The drink is an elegant fusion tea latte, presented in ...",
+        "price": 12.00,
+        "quantity": 20,
+        "isAvailable": true,
+        "tags": ["teas","drinks"],
+        "mainCategory": "teas",
+        "categories": ["teas", "drinks"],
+        "photo": "purple-white-green-flower.webp"
+        
+    }
+
+
+]

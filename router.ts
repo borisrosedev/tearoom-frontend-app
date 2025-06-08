@@ -1,5 +1,8 @@
 import HomeContainer from "./src/ts/containers/home/HomeContainer";
 import LandingContainer from "./src/ts/containers/landing/LandingContainer";
+import LoginContainer from "./src/ts/containers/login/LoginContainer";
+import NavBarContainer from "./src/ts/containers/navbar/NavBarContainer";
+import navBarLayout from "./src/ts/ui/layout/navbar/navbar";
 import homePage from "./src/ts/ui/pages/home/home";
 import landingPage from "./src/ts/ui/pages/landing/landing";
 import loginPage from "./src/ts/ui/pages/login/login";
@@ -37,23 +40,31 @@ function navigateTo(hash: string) {
 
   const rootDiv = document.getElementById("root");
   rootDiv.innerHTML = "";
+  rootDiv.insertAdjacentHTML('beforeend',navBarLayout())
+  new NavBarContainer(window.onNavigate);
   switch (hash) {
     case "":
-      rootDiv.innerHTML += landingPage();
+      rootDiv.insertAdjacentHTML('beforeend', landingPage()) 
       new LandingContainer(window.onNavigate);
       console.log("🚀 you are on the landing page");
       break;
     case "#home":
-      rootDiv.innerHTML += homePage();
+       rootDiv.insertAdjacentHTML('beforeend', homePage()) 
       new HomeContainer(window.onNavigate);
       console.log("🚩you are on the home page");
       break;
     case "#login":
-      rootDiv.innerHTML += loginPage();
+      rootDiv.insertAdjacentHTML('beforeend', loginPage()) 
+      new LoginContainer(window.onNavigate)
       console.log("🍧 you are on the login page");
       break;
+    case "#signup":
+      rootDiv.insertAdjacentHTML('beforeend', loginPage())
+      new LoginContainer(window.onNavigate, false) 
+      console.log("🍧 you are on the login page");
+      break;  
     default:
-      rootDiv.innerHTML += notFoundPage();
+       rootDiv.insertAdjacentHTML('beforeend', notFoundPage()) 
       console.log("❌you are elsewhere");
       break;
   }
