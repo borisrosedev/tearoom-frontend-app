@@ -10,9 +10,12 @@ export default function FormComponent(data: FormInterface) {
                 <section id="form-fields-section">
                     ${data.formFields.map((el: FieldInterface) => formFieldComponent(el)).join("")}
                 </section>
+                <section id="form-file-section"></section>
+                <section id="form-result"></section>
                 <section id="form-buttons-section">
                     ${data.formButtons.map((el: ButtonInterface) => buttonComponent(el)).join("")}
                 </section>
+             
 
             </form>
         

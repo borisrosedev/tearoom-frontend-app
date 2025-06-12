@@ -1,8 +1,10 @@
+import DashboardContainer from "./src/ts/containers/dashboard/DashboardContainer";
 import HomeContainer from "./src/ts/containers/home/HomeContainer";
 import LandingContainer from "./src/ts/containers/landing/LandingContainer";
 import LoginContainer from "./src/ts/containers/login/LoginContainer";
 import NavBarContainer from "./src/ts/containers/navbar/NavBarContainer";
 import navBarLayout from "./src/ts/ui/layout/navbar/navbar";
+import dashboardPage from "./src/ts/ui/pages/dashboard/dashboard";
 import homePage from "./src/ts/ui/pages/home/home";
 import landingPage from "./src/ts/ui/pages/landing/landing";
 import loginPage from "./src/ts/ui/pages/login/login";
@@ -58,6 +60,11 @@ function navigateTo(hash: string) {
       new LoginContainer(window.onNavigate, false);
       console.log("🍧 you are on the login page");
       break;
+    case "#dashboard":
+       rootDiv.insertAdjacentHTML("beforeend", dashboardPage());
+       new DashboardContainer(window.onNavigate);
+       console.log("🕵️‍♂️ you are on the dashboard page")
+       break;
     default:
       rootDiv.insertAdjacentHTML("beforeend", notFoundPage());
       console.log("❌you are elsewhere");

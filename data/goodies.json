@@ -1,0 +1,15 @@
+[
+
+    {
+        "id": 0,
+        "name": "Quiche",
+        "price": 6.0,
+        "quantity": 20,
+        "isAvailable": true,
+        "mainCategory": "goodies",
+        "tags": ["goodies", "food"],
+        "categories": ["goodies", "food"],
+        "photo": "quiche.webp",
+        "description":"The plate features a delicate quiche with golden-brown crust, garnished with fresh herbs, ..."
+    }
+]

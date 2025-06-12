@@ -1,5 +1,7 @@
+import browserDataSource from "../../data-sources/local-data-sources/browser-data-source";
 import { OnNavigateType } from "../../interfaces/OnNavigateType";
 import BaseContainer from "../../models/BaseContainer";
+import authService from "../../services/authService";
 import burgerMenuComponent from "../../ui/components/burger-menu/burger-menu";
 import navBarDropDown from "../../ui/layout/navbar/navbar-dropdown";
 import {
@@ -57,7 +59,13 @@ class NavBarContainer extends BaseContainer {
     );
     const navBarEnd = document.getElementById("navbar-end");
 
-    const navBarEndButtons = [
+    
+    const navBarEndButtons = []
+
+    const token = browserDataSource.get('tearoom:token')
+    if(!token){
+
+      navBarEndButtons.push(
       {
         id: "signup-button",
         classNames: "is-primary",
@@ -68,12 +76,58 @@ class NavBarContainer extends BaseContainer {
         classNames: "is-light",
         content: "Log in",
       },
-    ];
+      );
 
-    navBarEnd.insertAdjacentHTML(
-      "beforeend",
-      navBarItemWithButtons(navBarEndButtons),
-    );
+
+        navBarEnd.insertAdjacentHTML(
+          "beforeend",
+          navBarItemWithButtons(navBarEndButtons),
+      );
+
+
+          const signUpButton = document.getElementById("signup-button");
+          const logInButton = document.getElementById("login-button");
+
+          signUpButton.onclick = () => this.onNavigate("#signup");
+          logInButton.onclick = () => this.onNavigate("#login");
+
+  
+    } else {
+
+      navBarEndButtons.push(
+        {
+          id: "dashboard-button",
+          classNames: "is-primary",
+          content: "Dashboard"
+        },
+        {
+          id: "logout-button",
+          classNames: "is-danger",
+          content: "Log out", 
+        }
+      )
+
+      
+        navBarEnd.insertAdjacentHTML(
+          "beforeend",
+          navBarItemWithButtons(navBarEndButtons),
+      );
+
+        const dashboardButton = document.getElementById("dashboard-button")
+        dashboardButton.addEventListener("click", () => {
+          this.onNavigate("#dashboard")
+        })
+
+
+        const logoutButton = document.getElementById("logout-button")
+        logoutButton.addEventListener("click", () => {
+          authService.logout()
+          this.onNavigate("#login")
+        })
+    }
+
+
+  
 
     const navBarBurgerMenu = document.getElementById("navbar-burger-menu");
 
@@ -87,11 +141,7 @@ class NavBarContainer extends BaseContainer {
 
     //sign-up and log in click-handling
 
-    const signUpButton = document.getElementById("signup-button");
-    const logInButton = document.getElementById("login-button");
 
-    signUpButton.onclick = () => this.onNavigate("#signup");
-    logInButton.onclick = () => this.onNavigate("#login");
   }
 }
 

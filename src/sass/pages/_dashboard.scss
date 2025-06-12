@@ -1,0 +1,22 @@
+.dashboard {
+
+    &__main {
+        flex-direction: column;
+        padding-top: 10vh;
+    }
+
+    &__info-section {
+        display: flex;
+        height: 400px;
+        justify-content: center;
+
+        figure {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+       
+          
+        }
+    }
+}

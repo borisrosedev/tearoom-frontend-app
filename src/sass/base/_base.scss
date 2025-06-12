@@ -20,3 +20,15 @@
   position: relative;
   pointer-events: all;
 }
+
+.button.is-active, .button:active, .button.is-focused, .button:focus-visible {
+  border-color: unset;
+  box-shadow: 0 0 5px #fff;
+
+}
+
+
+.input, .control {
+    --bulma-input-icon-hover-color: #fff;
+    --bulma-input-icon-focus-color: #fff;
+}

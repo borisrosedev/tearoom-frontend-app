@@ -1,0 +1,33 @@
+[
+    {
+        "id": 0,
+        "name": "The Cook",
+        "description": "The vide is so great and the skills are real",
+
+        "isAvailable": true,
+        "mainCategory": "rewards",
+        "tags": ["rewards"],
+        "categories": ["rewards"],
+        "photo": "culinary-magazine-1.webp"
+    },
+    {
+        "id": 1,
+        "name": "Sapidity Premiere",
+        "description": "Tea Room is the place you want to spend time in",
+        "isAvailable": true,
+        "mainCategory": "rewards",
+        "tags": ["rewards"],
+        "categories": ["rewards"],
+        "photo": "culinary-magazine-2.webp"
+    },
+    {
+        "id": 2,
+        "name": "Art Food",
+        "description": "Tea Room is really underestimated despite being the place you must go if you want eat the best cookies and teas in Paris",
+        "isAvailable": true,
+        "mainCategory": "rewards",
+        "tags": ["rewards"],
+        "categories": ["rewards"],
+        "photo": "culinary-magazine-3.webp"
+    }
+]

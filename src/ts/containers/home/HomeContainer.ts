@@ -10,9 +10,8 @@ class HomeContainer extends BaseContainer {
   }
 
   async onInit() {
-    const serverResponse = await fetch("/data/teas.json");
+    const serverResponse: Response = await fetch("/data/teas.json");
     const teas: ProductInterface[] = await serverResponse.json();
-    console.log(teas);
 
     const homeHeroSignaturesSection = document.getElementById(
       "home-hero-signatures",

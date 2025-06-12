@@ -14,7 +14,7 @@
 
   {
     "id": 1,
-    "name": "Sophie the Artist",
+    "name": "Sophia the Artist",
     "description": "A sophisticated and artistic image of a signature tea cocktail in a luxury tea salon. The drink is served in a crystal glass with layers of vibrant ...",
     "price": 15.0,
     "quantity": 20,
@@ -36,5 +36,31 @@
     "mainCategory": "teas",
     "categories": ["teas", "drinks"],
     "photo": "purple-white-green-flower.webp"
+  },
+  
+  {
+    "id": 3,
+    "name": "Tenis Tea",
+    "description": "The beverage is a vibrant iced matcha and lavender latte",
+    "price": 15.0,
+    "quantity": 20,
+    "isAvailable": true,
+    "tags": ["teas", "drinks"],
+    "mainCategory": "teas",
+    "categories": ["teas", "drinks"],
+    "photo": "tenis-tea.webp"
+  },
+   {
+    "id": 4,
+    "name": "Golden Tea",
+    "description": "The beverage is a vibrant iced matcha and lavender latte",
+    "price": 15.0,
+    "quantity": 20,
+    "isAvailable": true,
+    "tags": ["teas", "drinks"],
+    "mainCategory": "teas",
+    "categories": ["teas", "drinks"],
+    "photo": "golden-tea.webp"
   }
+
 ]
