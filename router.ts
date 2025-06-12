@@ -61,10 +61,10 @@ function navigateTo(hash: string) {
       console.log("🍧 you are on the login page");
       break;
     case "#dashboard":
-       rootDiv.insertAdjacentHTML("beforeend", dashboardPage());
-       new DashboardContainer(window.onNavigate);
-       console.log("🕵️‍♂️ you are on the dashboard page")
-       break;
+      rootDiv.insertAdjacentHTML("beforeend", dashboardPage());
+      new DashboardContainer(window.onNavigate);
+      console.log("🕵️‍♂️ you are on the dashboard page");
+      break;
     default:
       rootDiv.insertAdjacentHTML("beforeend", notFoundPage());
       console.log("❌you are elsewhere");

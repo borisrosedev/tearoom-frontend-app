@@ -59,75 +59,63 @@ class NavBarContainer extends BaseContainer {
     );
     const navBarEnd = document.getElementById("navbar-end");
 
-    
-    const navBarEndButtons = []
+    const navBarEndButtons = [];
 
-    const token = browserDataSource.get('tearoom:token')
-    if(!token){
-
+    const token = browserDataSource.get("tearoom:token");
+    if (!token) {
       navBarEndButtons.push(
-      {
-        id: "signup-button",
-        classNames: "is-primary",
-        content: "Sign up",
-      },
-      {
-        id: "login-button",
-        classNames: "is-light",
-        content: "Log in",
-      },
+        {
+          id: "signup-button",
+          classNames: "is-primary",
+          content: "Sign up",
+        },
+        {
+          id: "login-button",
+          classNames: "is-light",
+          content: "Log in",
+        },
       );
 
-
-        navBarEnd.insertAdjacentHTML(
-          "beforeend",
-          navBarItemWithButtons(navBarEndButtons),
+      navBarEnd.insertAdjacentHTML(
+        "beforeend",
+        navBarItemWithButtons(navBarEndButtons),
       );
 
+      const signUpButton = document.getElementById("signup-button");
+      const logInButton = document.getElementById("login-button");
 
-          const signUpButton = document.getElementById("signup-button");
-          const logInButton = document.getElementById("login-button");
-
-          signUpButton.onclick = () => this.onNavigate("#signup");
-          logInButton.onclick = () => this.onNavigate("#login");
-
-  
+      signUpButton.onclick = () => this.onNavigate("#signup");
+      logInButton.onclick = () => this.onNavigate("#login");
     } else {
-
       navBarEndButtons.push(
         {
           id: "dashboard-button",
           classNames: "is-primary",
-          content: "Dashboard"
+          content: "Dashboard",
         },
         {
           id: "logout-button",
           classNames: "is-danger",
-          content: "Log out", 
-        }
-      )
-
-      
-        navBarEnd.insertAdjacentHTML(
-          "beforeend",
-          navBarItemWithButtons(navBarEndButtons),
+          content: "Log out",
+        },
       );
 
-        const dashboardButton = document.getElementById("dashboard-button")
-        dashboardButton.addEventListener("click", () => {
-          this.onNavigate("#dashboard")
-        })
+      navBarEnd.insertAdjacentHTML(
+        "beforeend",
+        navBarItemWithButtons(navBarEndButtons),
+      );
 
+      const dashboardButton = document.getElementById("dashboard-button");
+      dashboardButton.addEventListener("click", () => {
+        this.onNavigate("#dashboard");
+      });
 
-        const logoutButton = document.getElementById("logout-button")
-        logoutButton.addEventListener("click", () => {
-          authService.logout()
-          this.onNavigate("#login")
-        })
+      const logoutButton = document.getElementById("logout-button");
+      logoutButton.addEventListener("click", () => {
+        authService.logout();
+        this.onNavigate("#login");
+      });
     }
-
-
-  
 
     const navBarBurgerMenu = document.getElementById("navbar-burger-menu");
 
@@ -140,8 +128,6 @@ class NavBarContainer extends BaseContainer {
     });
 
     //sign-up and log in click-handling
-
-
   }
 }
 

@@ -1,14 +1,14 @@
 [
-    {
-        "id": 0,
-        "name": "Carrot Cake",
-        "description": "A slice of freshly baked carrot cake with cream cheese frosting and a sprinkle of chopped ...",
-        "price": 6.0,
-        "quantity": 20,
-        "isAvailable": true,
-        "mainCategory": "desserts",
-        "tags": ["desserts", "food"],
-        "categories": ["desserts", "food"],
-        "photo": "carrot-cake.webp"
-    }
+  {
+    "id": 0,
+    "name": "Carrot Cake",
+    "description": "A slice of freshly baked carrot cake with cream cheese frosting and a sprinkle of chopped ...",
+    "price": 6.0,
+    "quantity": 20,
+    "isAvailable": true,
+    "mainCategory": "desserts",
+    "tags": ["desserts", "food"],
+    "categories": ["desserts", "food"],
+    "photo": "carrot-cake.webp"
+  }
 ]

@@ -4,21 +4,16 @@
     justify-content: center;
   }
 
- 
-
   &__form {
     & > section:first-of-type {
       margin-block: 20px;
-
-      
     }
 
-    & > section:nth-child(2){
+    & > section:nth-child(2) {
       margin-block: 20px;
     }
 
-
-    & > section:nth-child(3){
+    & > section:nth-child(3) {
       height: 30px;
       display: flex;
       margin-block: 10px;
