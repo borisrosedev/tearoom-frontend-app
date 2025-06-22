@@ -44,11 +44,15 @@ function cardContentComponent(data: Partial<CardProductType>, buttons?: any[]) {
             <div class="card-content"> 
                 ${mediaComponent({ src: data.src, alt: data.alt, name: data.name, mainCategory: data.mainCategory })}
                 ${contentComponent({ description: data.description, tags: data.tags })}
-                ${buttons && buttons.length > 0 ? `
+                ${
+                  buttons && buttons.length > 0
+                    ? `
                    <section class="buttons">
-                    ${buttons.map((btn) => buttonComponent({ ...btn, id: `${btn.id}-${data.id}`})).join("")}
+                    ${buttons.map((btn) => buttonComponent({ ...btn, id: `${btn.id}-${data.id}` })).join("")}
                    </section>
-                    `: '' }
+                    `
+                    : ""
+                }
             </div>
         
          

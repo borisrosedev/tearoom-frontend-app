@@ -1,22 +1,15 @@
 .desserts {
+  &__main {
+    padding-top: 10vh;
 
-
-    &__main {
-        padding-top: 10vh;
-
-
-        #desserts-list-section {
-            display: flex;
-            flex-wrap: wrap;
-            .card {
-                width: 300px;
-                margin: 20px;
-                height: 600px;
-            }
-        }
-        
+    #desserts-list-section {
+      display: flex;
+      flex-wrap: wrap;
+      .card {
+        width: 300px;
+        margin: 20px;
+        height: 600px;
+      }
     }
-
-
-   
+  }
 }

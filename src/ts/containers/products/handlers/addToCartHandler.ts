@@ -8,31 +8,27 @@ export default async function (data, ancestor) {
     const cartContentItems =
       browserDataSource.get("tearoom:cart")["content"]["items"];
     let inTheCart;
-    const updatedCartContentItems = cartContentItems
-    for(const item of updatedCartContentItems){
-      if(Number(item.id) == data.id) {
-    
-        item.quantity += 1
-        inTheCart = true
-      } 
+    const updatedCartContentItems = cartContentItems;
+    for (const item of updatedCartContentItems) {
+      if (Number(item.id) == data.id) {
+        item.quantity += 1;
+        inTheCart = true;
+      }
     }
 
-    if(!inTheCart){
-        newContent = [
-          ...updatedCartContentItems,
-          { id: data.id, name: data.name, price: data.price, quantity: 1 },
-        ];
-
+    if (!inTheCart) {
+      newContent = [
+        ...updatedCartContentItems,
+        { id: data.id, name: data.name, price: data.price, quantity: 1 },
+      ];
     } else {
-         newContent = [
-          ...updatedCartContentItems,
-        ];
+      newContent = [...updatedCartContentItems];
     }
-
-
   } catch (err) {
     console.log(err);
-    newContent = [{ id: data.id, name: data.name, price: data.price, quantity: 1 }];
+    newContent = [
+      { id: data.id, name: data.name, price: data.price, quantity: 1 },
+    ];
   } finally {
     const { message, err, cart } = await cartService.addItem({
       items: newContent,

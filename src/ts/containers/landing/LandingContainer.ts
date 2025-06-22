@@ -22,9 +22,8 @@ class LandingContainer extends BaseContainer {
         }),
       );
 
-      const landingButton = document.getElementById('landing-button')
+      const landingButton = document.getElementById("landing-button");
       landingButton.onclick = () => this.onNavigate("#home");
-
     }, 2000);
   }
 }

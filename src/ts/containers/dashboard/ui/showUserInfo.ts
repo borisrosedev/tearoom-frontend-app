@@ -1,5 +1,5 @@
 export default function showUserInfo(user: any) {
-    return `
+  return `
                 <article class="info__user">
                     <section class="info__user-role-section">
                         <span aria-label="info__role">Role: ${user.role}</span>
@@ -14,4 +14,4 @@ export default function showUserInfo(user: any) {
 
             
             `;
-  }
+}

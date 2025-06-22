@@ -1,22 +1,15 @@
 .teas {
+  &__main {
+    padding-top: 10vh;
 
-
-    &__main {
-        padding-top: 10vh;
-
-
-        #teas-list-section {
-            display: flex;
-            flex-wrap: wrap;
-            .card {
-                width: 300px;
-                margin: 20px;
-                height: 600px;
-            }
-        }
-        
+    #teas-list-section {
+      display: flex;
+      flex-wrap: wrap;
+      .card {
+        width: 300px;
+        margin: 20px;
+        height: 600px;
+      }
     }
-
-
-   
+  }
 }

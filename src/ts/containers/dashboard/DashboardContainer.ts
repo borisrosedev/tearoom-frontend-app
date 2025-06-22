@@ -4,7 +4,6 @@ import { OnNavigateType } from "../../interfaces/OnNavigateType";
 import BaseContainer from "../../models/BaseContainer";
 import userService from "../../services/userService";
 import figureComponent from "../../ui/components/figure/figure";
-;
 import onDeleteAccountButtonClick from "./handlers/onDeleteAccountButtonClick";
 import onEditAccountButtonClick from "./handlers/onEditAccountButtonClick";
 
@@ -19,10 +18,6 @@ class DashboardContainer extends BaseContainer {
     this.onInit();
   }
 
-
-
-  
-  
   async onInit() {
     const dashboardInfoSection = document.getElementById(
       "dashboard-info-section",
@@ -52,10 +47,7 @@ class DashboardContainer extends BaseContainer {
       }),
     );
 
-    dashboardInfoSection.insertAdjacentHTML(
-      "beforeend",
-      showUserInfo(user),
-    );
+    dashboardInfoSection.insertAdjacentHTML("beforeend", showUserInfo(user));
 
     const profileButtons = [
       {
@@ -84,9 +76,9 @@ class DashboardContainer extends BaseContainer {
     const cartButtons = [];
 
     if (cart && cart.id) {
-      showExistingCartUi(cartButtons, cart, dashboardInfoSection)
+      showExistingCartUi(cartButtons, cart, dashboardInfoSection);
     } else {
-      showNoneExistingCartUi(cartButtons, dashboardInfoSection, this)
+      showNoneExistingCartUi(cartButtons, dashboardInfoSection, this);
     }
 
     const editButton = document.getElementById("edit-button");

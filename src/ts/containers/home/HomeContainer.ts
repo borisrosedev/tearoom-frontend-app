@@ -10,7 +10,7 @@ class HomeContainer extends BaseContainer {
   }
 
   async onInit() {
-    const teas = await teasService.getAll()
+    const teas = await teasService.getAll();
     const homeHeroSignaturesSection = document.getElementById(
       "home-hero-signatures",
     );
@@ -20,12 +20,15 @@ class HomeContainer extends BaseContainer {
         id: "product-info-button",
         type: "button",
         content: "More",
-        classNames: "is-info"
-      }
-    ]
+        classNames: "is-info",
+      },
+    ];
 
     teas.forEach((tea) => {
-      homeHeroSignaturesSection.innerHTML += cardComponent(tea, productCardButtons);
+      homeHeroSignaturesSection.innerHTML += cardComponent(
+        tea,
+        productCardButtons,
+      );
     });
   }
 }

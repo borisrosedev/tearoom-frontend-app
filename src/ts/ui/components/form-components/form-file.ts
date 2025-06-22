@@ -1,13 +1,12 @@
 interface formFileComponentProps {
-    content: string 
-    id: string
-    classNames?: string
+  content: string;
+  id: string;
+  classNames?: string;
 }
 
 export default function formFileComponent(data: formFileComponentProps) {
-    return(
-        `
-        <article class="file is-info has-name ${data.classNames ?? 'is-primary'}">
+  return `
+        <article class="file is-info has-name ${data.classNames ?? "is-primary"}">
             <label class="file-label">
                 <input id="${data.id}" class="file-input" type="file" name="${data.id}" />
                 <span class="file-cta">
@@ -22,6 +21,5 @@ export default function formFileComponent(data: formFileComponentProps) {
         </article>
         
         
-        `
-    )
+        `;
 }

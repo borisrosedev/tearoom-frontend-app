@@ -16,7 +16,6 @@ import dessertsPage from "./src/ts/ui/pages/products/desserts/desserts";
 import goodiesPage from "./src/ts/ui/pages/products/goodies/goodies";
 import teasPage from "./src/ts/ui/pages/products/teas/teas";
 
-
 declare global {
   interface Window {
     onNavigate: (h: string) => void;
@@ -82,7 +81,6 @@ function navigateTo(hash: string) {
       console.log("❌you are elsewhere");
       break;
   }
-  
 }
 
 export default function router() {

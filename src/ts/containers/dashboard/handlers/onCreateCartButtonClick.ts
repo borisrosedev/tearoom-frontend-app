@@ -1,6 +1,6 @@
 import cartService from "../../../services/cartService";
 
-async function onCreateCartButtonClick (ancestor){
+async function onCreateCartButtonClick(ancestor) {
   const { cart, message } = await cartService.createCart();
   if (message == "invalid token") {
     alert("Your token has expired. You need to log in again");
@@ -8,10 +8,9 @@ async function onCreateCartButtonClick (ancestor){
     return;
   }
 
-  if(cart){
-      ancestor.onNavigate("#dashboard");
+  if (cart) {
+    ancestor.onNavigate("#dashboard");
   }
-     
 }
 
-export default onCreateCartButtonClick
+export default onCreateCartButtonClick;

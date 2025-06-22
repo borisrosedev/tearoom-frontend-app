@@ -37,7 +37,7 @@
     "categories": ["teas", "drinks"],
     "photo": "purple-white-green-flower.webp"
   },
-  
+
   {
     "id": 3,
     "name": "Tenis Tea",
@@ -50,7 +50,7 @@
     "categories": ["teas", "drinks"],
     "photo": "tenis-tea.webp"
   },
-   {
+  {
     "id": 4,
     "name": "Golden Tea",
     "description": "The beverage is a vibrant iced matcha and lavender latte",
@@ -62,5 +62,4 @@
     "categories": ["teas", "drinks"],
     "photo": "golden-tea.webp"
   }
-
 ]
