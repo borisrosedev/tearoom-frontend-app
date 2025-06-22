@@ -1,4 +1,5 @@
 import { CardProductType } from "../../../interfaces/ProductInterface";
+import buttonComponent from "../button/button";
 
 function tagsListComponent(data: Array<string>) {
   return `
@@ -38,11 +39,16 @@ function mediaComponent(data: Partial<CardProductType>) {
         `;
 }
 
-function cardContentComponent(data: Partial<CardProductType>) {
+function cardContentComponent(data: Partial<CardProductType>, buttons?: any[]) {
   return `
             <div class="card-content"> 
                 ${mediaComponent({ src: data.src, alt: data.alt, name: data.name, mainCategory: data.mainCategory })}
                 ${contentComponent({ description: data.description, tags: data.tags })}
+                ${buttons && buttons.length > 0 ? `
+                   <section class="buttons">
+                    ${buttons.map((btn) => buttonComponent({ ...btn, id: `${btn.id}-${data.id}`})).join("")}
+                   </section>
+                    `: '' }
             </div>
         
          
@@ -65,12 +71,12 @@ function cardImageComponent(data: Partial<CardProductType>) {
         `;
 }
 
-export default function cardComponent(data: CardProductType) {
+export default function cardComponent(data: CardProductType, buttons?: any[]) {
   return `
         
-            <div class="card">
+            <div class="card" data-product-id="${data.id}">
                 ${cardImageComponent({ mainCategory: data.mainCategory, src: data.photo ?? data.url ?? data.src, alt: data.name ?? data.alt })}
-                ${cardContentComponent({ mainCategory: data.mainCategory, src: data.src ?? data.url ?? data.photo, description: data.description, tags: data.tags, alt: data.alt ?? data.name, name: data.name })}
+                ${cardContentComponent({ id: data.id, mainCategory: data.mainCategory, src: data.src ?? data.url ?? data.photo, description: data.description, tags: data.tags, alt: data.alt ?? data.name, name: data.name }, buttons)}
             </div>
                         
         

@@ -4,12 +4,12 @@ import browserDataSource from "../local-data-sources/browser-data-source";
 
 const apiDataSource = {
 
-    async receive(endpoint: string, isTokenRequired?: boolean) {
+    async receive(endpoint: string, isTokenRequired?: boolean, method: string = "GET") {
 
         return await tryCatch(async function () {
 
             const requestInit =  {
-                method: "GET",
+                method: method ,
                 headers: {}
             } as { method: string, headers: any, body?: any}
 

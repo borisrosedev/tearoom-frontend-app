@@ -134,17 +134,17 @@ class LoginContainer extends BaseContainer {
     const formData = new FormData(form)
     const emailValue = formData.get('email') 
     const passwordValue = formData.get('password')
-    console.log(emailValue, passwordValue)
     const formResult = document.getElementById("form-result")
     const submitButton = document.getElementById('submit-button') as HTMLButtonElement
     submitButton.disabled = true
     if(! (emailValue && passwordValue) ) {
-      alert('Fill in the form')
+      formResult.innerText = "Fill in the form"
       return
     } 
 
     if(this.isLoggingIn) {
    
+      // login logic
       const emailValue = (document.getElementById("email") as HTMLInputElement).value 
       const passworValue = (document.getElementById("password") as HTMLInputElement).value
       const hasLoggedIn  = await authService.login({ email: emailValue, password: passworValue})
@@ -162,18 +162,18 @@ class LoginContainer extends BaseContainer {
         
     } else {
 
+      //signup logic
       const firstnameValue = formData.get('firstName')
       const lastnameValue = formData.get('lastName')
 
       if(!firstnameValue || !lastnameValue) {
-        alert('Fill in the form')
+        formResult.innerText = "Fill in the form"
         return 
       }
 
       const hasSignedUp = await userService.signup(formData)
       
       if(!hasSignedUp){
-        console.log("Fail to Sign Up")
         submitButton.disabled = false
         formResult.innerText =  "You have failed to sign Up"
         return 

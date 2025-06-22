@@ -11,6 +11,6 @@ interface ProductInterface {
   url?: string;
 }
 
-export type CardProductType = ProductInterface & { alt?: string; src?: string };
+export type CardProductType = ProductInterface & { alt?: string; src?: string } & { buttons?: any[]};
 
-export default ProductInterface;
+export default ProductInterface; 

@@ -3,7 +3,7 @@ function dashboardPage () {
 
     return(
         `
-            <main class="tearoom-main dashboard__main">
+            <main id="dashboard-main" class="tearoom-main dashboard__main">
 
             <section id="dashboard-info-section" class="dashboard__info-section"></section>
 

@@ -1,6 +1,6 @@
 import { OnNavigateType } from "../../interfaces/OnNavigateType";
-import ProductInterface from "../../interfaces/ProductInterface";
 import BaseContainer from "../../models/BaseContainer";
+import teasService from "../../services/products/teasService";
 import cardComponent from "../../ui/components/card/card";
 
 class HomeContainer extends BaseContainer {
@@ -10,14 +10,22 @@ class HomeContainer extends BaseContainer {
   }
 
   async onInit() {
-    const serverResponse: Response = await fetch("/data/teas.json");
-    const teas: ProductInterface[] = await serverResponse.json();
-
+    const teas = await teasService.getAll()
     const homeHeroSignaturesSection = document.getElementById(
       "home-hero-signatures",
     );
+
+    const productCardButtons = [
+      {
+        id: "product-info-button",
+        type: "button",
+        content: "More",
+        classNames: "is-info"
+      }
+    ]
+
     teas.forEach((tea) => {
-      homeHeroSignaturesSection.innerHTML += cardComponent(tea);
+      homeHeroSignaturesSection.innerHTML += cardComponent(tea, productCardButtons);
     });
   }
 }

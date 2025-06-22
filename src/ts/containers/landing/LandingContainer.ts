@@ -11,24 +11,21 @@ class LandingContainer extends BaseContainer {
     this.onInit();
   }
 
-  buttonCreationExecutor(resolve: any) {
-    this.landingSection.innerHTML += buttonComponent({
-      id: "landing-button",
-      content: "Enter",
-      classNames: "is-primary animate__animated animate__fadeInUp",
-    });
-    resolve();
-  }
-
   onInit() {
     setTimeout(() => {
-      new Promise(this.buttonCreationExecutor.bind(this)).then(() => {
-        const landingButton = document.getElementById("landing-button");
-        landingButton.addEventListener("click", () => {
-          this.onNavigate("#home");
-        });
-      });
-    }, 1500);
+      this.landingSection.insertAdjacentHTML(
+        "beforeend",
+        buttonComponent({
+          id: "landing-button",
+          content: "Enter",
+          classNames: "is-primary animate__animated animate__fadeInUp",
+        }),
+      );
+
+      const landingButton = document.getElementById('landing-button')
+      landingButton.onclick = () => this.onNavigate("#home");
+
+    }, 2000);
   }
 }
 

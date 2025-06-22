@@ -10,6 +10,7 @@ import {
   navBarItemWithDropdown,
 } from "../../ui/layout/navbar/navbar-item";
 import navBarMenu from "../../ui/layout/navbar/navbar-menu";
+import onCartButtonClick from "./handlers/onCartButtonClick";
 
 class NavBarContainer extends BaseContainer {
   constructor(onNavigate: OnNavigateType) {
@@ -38,13 +39,25 @@ class NavBarContainer extends BaseContainer {
     const navBarMenuDropdown = document.getElementById("navbar-menu-dropdown");
     const dropdownLists = {
       mainList: [
+
+        {
+          href: "#goodies",
+          content: "Goodies",
+          isSelected: false,
+        },
+        {
+          href: "#desserts",
+          content: "Desserts",
+          isSelected: false,
+        },
+      
+      ],
+      secondaryList: [
         {
           href: "",
           content: "About us",
           isSelected: false,
         },
-      ],
-      secondaryList: [
         {
           href: "",
           content: "Legal Information",
@@ -79,6 +92,8 @@ class NavBarContainer extends BaseContainer {
       );
 
 
+
+
         navBarEnd.insertAdjacentHTML(
           "beforeend",
           navBarItemWithButtons(navBarEndButtons),
@@ -107,6 +122,13 @@ class NavBarContainer extends BaseContainer {
         }
       )
 
+
+      navBarEndButtons.unshift({
+        id: "cart-button",
+        classNames: "is-warning",
+        content: "Cart"
+      })
+
       
         navBarEnd.insertAdjacentHTML(
           "beforeend",
@@ -117,6 +139,10 @@ class NavBarContainer extends BaseContainer {
         dashboardButton.addEventListener("click", () => {
           this.onNavigate("#dashboard")
         })
+
+
+        const dashboardCartButton = document.getElementById("cart-button")
+        dashboardCartButton.onclick = onCartButtonClick.bind(this)
 
 
         const logoutButton = document.getElementById("logout-button")

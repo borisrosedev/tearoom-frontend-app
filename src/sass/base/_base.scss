@@ -21,6 +21,14 @@
   pointer-events: all;
 }
 
+.custom-modal-content {
+  text-align: center;
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .button.is-active, .button:active, .button.is-focused, .button:focus-visible {
   border-color: unset;
   box-shadow: 0 0 5px #fff;
