@@ -2,14 +2,14 @@ import browserDataSource from "../../data-sources/local-data-sources/browser-dat
 import ButtonInterface from "../../interfaces/ButtonInterface";
 import { OnNavigateType } from "../../interfaces/OnNavigateType";
 import BaseContainer from "../../models/BaseContainer";
-import cartService from "../../services/cartService";
 import userService from "../../services/userService";
-
 import figureComponent from "../../ui/components/figure/figure";
-
+;
 import onDeleteAccountButtonClick from "./handlers/onDeleteAccountButtonClick";
 import onEditAccountButtonClick from "./handlers/onEditAccountButtonClick";
-import showCartSection from "./ui/showCartSection";
+
+import showExistingCartUi from "./ui/showExistingCartUi";
+import showNoneExistingCartUi from "./ui/showNoneExistingCartUi";
 import showProfileButtons from "./ui/showProfileButtons";
 import showUserInfo from "./ui/showUserInfo";
 
@@ -83,59 +83,10 @@ class DashboardContainer extends BaseContainer {
 
     const cartButtons = [];
 
-    if (cart.id) {
-      cartButtons.push({
-        id: "delete-cart-button",
-        content: "Delete your cart",
-        classNames: "is-danger",
-      });
-
-      if (cart.content) {
-        cartButtons.push({
-          id: "show-cart-button",
-          content: "See your cart",
-          classNames: "is-primary",
-        });
-        dashboardInfoSection.insertAdjacentHTML(
-          "beforeend",
-          showCartSection(
-            { content: "You should take a look a your cart" },
-            cartButtons,
-          ),
-        );
-      } else {
-        dashboardInfoSection.insertAdjacentHTML(
-          "beforeend",
-          showCartSection(
-            { content: "Your cart is empty" },
-            cartButtons,
-          ),
-        );
-      }
+    if (cart && cart.id) {
+      showExistingCartUi(cartButtons, cart, dashboardInfoSection)
     } else {
-      cartButtons.push({
-        id: "create-cart-button",
-        content: "Create a cart",
-        classNames: "is-primary",
-      });
-
-      dashboardInfoSection.insertAdjacentHTML(
-        "beforeend",
-        showCartSection(
-          { content: "You do not have a cart" },
-          cartButtons,
-        ),
-      );
-
-      const createCartButton = document.getElementById("create-cart-button");
-      createCartButton.onclick = async () => {
-        const { cart, message, err } = await cartService.createCart();
-        if (message == "invalid token") {
-          alert("Your token has expired. You need to log in again");
-          this.onNavigate("#login");
-          return;
-        }
-      };
+      showNoneExistingCartUi(cartButtons, dashboardInfoSection, this)
     }
 
     const editButton = document.getElementById("edit-button");

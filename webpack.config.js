@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js",
-    clean: true
+    clean: true,
   },
   resolve: {
     extensions: [".ts", ".js", ".json"],
@@ -23,6 +23,21 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
+      },
+
+      {
+        test: /\.m?js$/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"], // ensure compatibility with older browsers
+            plugins: ["@babel/plugin-transform-object-assign"], // ensure compatibility with IE 11
+          },
+        },
+      },
+      {
+        test: /\.js$/,
+        loader: "webpack-remove-debug", // remove "debug" package
       },
     ],
   },

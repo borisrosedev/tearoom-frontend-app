@@ -7,12 +7,11 @@ export default async function (data, ancestor) {
   try {
     const cartContentItems =
       browserDataSource.get("tearoom:cart")["content"]["items"];
-      console.log("cartcontentitems", cartContentItems)
     let inTheCart;
     const updatedCartContentItems = cartContentItems
     for(const item of updatedCartContentItems){
       if(Number(item.id) == data.id) {
-        console.log("yes")
+    
         item.quantity += 1
         inTheCart = true
       } 
@@ -47,7 +46,6 @@ export default async function (data, ancestor) {
       if (err.name == "TokenExpiredError") {
         ancestor.onNavigate("#login");
         authService.logout();
-        return;
       }
     }
 

@@ -16,6 +16,18 @@
   font-family: "Parisienne", cursive;
 }
 
+
+.custom-notification {
+  
+  &--fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 20;
+    width: fit-content;
+  }
+}
+
 .custom-navbar-burger {
   position: relative;
   pointer-events: all;
